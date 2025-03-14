@@ -1,4 +1,5 @@
 package impression;
+import solides.Solide;
 
 /**
  * Classe représentant une file d'attente des solides, triés en fonction de leur grosseur (volume).

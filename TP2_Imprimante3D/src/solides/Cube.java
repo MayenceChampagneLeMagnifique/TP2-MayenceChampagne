@@ -19,7 +19,8 @@ public class Cube extends Solide{
     }
 
     public Cube() {
-        super();
+        setCote(COTE_DEFAUT);
+        setMateriau(MATERIAU_DEFAUT);
     }
 
     /**
@@ -124,7 +125,7 @@ public class Cube extends Solide{
 
     @Override
     double calculerSurface() {
-        return Math.pow(cote, 2);
+        return Math.pow(cote, 2) * 6;
     }
 
     @Override

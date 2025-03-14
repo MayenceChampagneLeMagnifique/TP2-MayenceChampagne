@@ -1,6 +1,7 @@
 package app;
 
 import impression.FileAttente;
+import impression.ListeSolides;
 
 import javax.swing.*;
 import java.awt.*;

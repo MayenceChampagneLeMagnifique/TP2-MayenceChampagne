@@ -2,14 +2,14 @@ package solides;
 
 import interfaces.Imprimable;
 
-public abstract class Solide implements Imprimable, Comparable {
+public abstract class Solide implements Imprimable {
     protected final Materiau MATERIAU_DEFAUT = Materiau.NYLON;
     protected Materiau materiau;
     protected final double DIM_MAX = 50;
     protected final double DIM_MIN = 1;
 
 
-    public int compareTo(Solide s) {
+    protected int compareTo(Solide s) {
         if (this.calculerVolume() > s.calculerVolume()) {
             return 1;
         }
@@ -30,7 +30,13 @@ public abstract class Solide implements Imprimable, Comparable {
     }
 
     public boolean validerDimensions(double dimension) {
-
+        if (dimension < DIM_MIN) {
+            throw new RuntimeException("Dimension inférieure à 1");
+        }
+        if (dimension > DIM_MAX) {
+            throw new RuntimeException("Dimension supérieure à 50");
+        }
+        return true;
     }
 
     public abstract double calculerVolume();
